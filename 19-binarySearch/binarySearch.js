@@ -4,7 +4,30 @@ class MySolution {
   }
 
   binarySearch(nums, target) {
-    // Insert code here;
+    let left = 0;
+    let right = nums.length - 1;
+    let middle;
+    let bool = false;
+
+    while(left <= right)
+    {
+       middle = Math.floor((left + right)/ 2);
+
+      if(nums[middle] === target)
+      {
+        bool = true;
+      }
+
+      if(nums[middle] < target)
+      {
+        left = middle + 1;
+      }
+      else
+      {
+        right = middle - 1;
+      }
+    }
+    return bool;
   }
 }
 
